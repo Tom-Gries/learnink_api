@@ -4,9 +4,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "vercel dev"
+    "start": "vercel dev",
+    "test": "jest"
   },
   "dependencies": {
     "mongodb": "^5.9.2"
+  },
+  "devDependencies": {
+    "jest": "^30.3.0",
+    "node-fetch": "^3.3.2"
   }
 }

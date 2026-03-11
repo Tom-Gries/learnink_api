@@ -1,0 +1,20 @@
+### GET alle Staples
+GET https://learnink-api.vercel.app/api/staples
+
+### POST neuen Staple
+POST https://learnink-api.vercel.app/api/staples
+Content-Type: application/json
+
+{
+  "name": "Mathe"
+}
+
+### POST neue Frage
+POST https://learnink-api.vercel.app/api/staples/questions
+Content-Type: application/json
+
+{
+  "stapleId": "69b1cf35b1abbc00a84b64a6",
+  "text": "Was ist 2+2?",
+  "answers": ["4", "3", "5"]
+}
