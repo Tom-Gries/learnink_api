@@ -6,7 +6,7 @@ POST https://learnink-api.vercel.app/api/staples
 Content-Type: application/json
 
 {
-  "name": "Mathe"
+  "name": "Test"
 }
 
 ### POST neue Frage
@@ -14,7 +14,33 @@ POST https://learnink-api.vercel.app/api/staples/questions
 Content-Type: application/json
 
 {
-  "stapleId": "69b1cf35b1abbc00a84b64a6",
+  "stapleId": "69ce264f07541441747a59d1",
   "text": "Was ist 2+2?",
-  "answers": ["4", "3", "5"]
+  "answers": [
+    {
+      "id": 1,
+      "text": "4",
+      "isCorrect": true
+    },
+    {
+      "id": 2,
+      "text": "3",
+      "isCorrect": false
+    },
+    {
+      "id": 3,
+      "text": "5",
+      "isCorrect": false
+    },
+    {
+      "id": 4,
+      "text": "5",
+      "isCorrect": false
+    },
+    {
+      "id": 5,
+      "text": "5",
+      "isCorrect": false
+    }
+  ]
 }
