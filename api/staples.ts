@@ -1,7 +1,6 @@
-import clientPromise from "../../lib/db.js"
+import clientPromise from "../lib/db.js"
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import { methodHandler } from "../../lib/handler/MethodHandler.js";
-
+import { methodHandler } from "../lib/handler/MethodHandler.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
