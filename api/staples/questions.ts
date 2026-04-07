@@ -1,7 +1,10 @@
 import clientPromise from "../../lib/db.js"
+import { VercelRequest, VercelResponse } from '@vercel/node';
+
 import { ObjectId } from "mongodb"
 
-export default async function handler(req, res) {
+export default function handler(req: VercelRequest, res: VercelResponse) {
+
   try {
     if (req.method !== "POST") {
       return res.status(405).json({ error: "Method not allowed" })

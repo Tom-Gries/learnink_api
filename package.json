@@ -8,6 +8,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@vercel/node": "^5.7.0",
     "mongodb": "^5.9.2"
   },
   "devDependencies": {

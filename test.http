@@ -14,13 +14,13 @@ POST https://learnink-api.vercel.app/api/staples/questions
 Content-Type: application/json
 
 {
-  "stapleId": "69ce264f07541441747a59d1",
-  "text": "Was ist 2+2?",
+  "stapleId": "69b1d17ef67d04efe3462e6a",
+  "text": "a",
   "answers": [
     {
       "id": 1,
       "text": "4",
-      "isCorrect": true
+      "isCorrect": false
     },
     {
       "id": 2,
