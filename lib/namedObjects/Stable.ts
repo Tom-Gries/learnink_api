@@ -19,10 +19,10 @@ export const namedStable: NamedStable = {
     }
   },
   createValue(value: any): Stable {
-    if (value.text === undefined) throw new Error("Text fehlt")
-    if (value.questions === undefined) throw new Error("Antworten fehlen")
+    if (value.name === undefined) throw new Error(value)
+    if (value.questions === undefined) throw new Error("Questions fehlen")
     return {
-      name: value.text,
+      name: value.name,
       questions: namedQuestion.setValue(value.questions)
     }
   },
@@ -32,7 +32,6 @@ export const namedStable: NamedStable = {
     })
   },
   setValue(value: any) {
-    if (value.name === undefined) throw new Error("Name fehlt")
     this.handleValue(value)
     return this
   }
