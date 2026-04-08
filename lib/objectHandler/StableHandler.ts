@@ -1,7 +1,7 @@
 import clientPromise from "../db"
 import { namedStable } from "../namedObjects/Stable"
 import { ObjectHandler } from "../types/ObjectHandler"
-import { NamedStable, Stable } from "../types/Stable"
+import { NamedStable } from "../types/Stable"
 
 export const stableHandler: ObjectHandler<NamedStable> = {
   init: async function (): Promise<ObjectHandler<NamedStable>> {
