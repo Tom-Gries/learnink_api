@@ -1,7 +1,7 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import { methodHandler } from "@lib/MethodHandler.js";
+import { methodHandler } from "@lib/MethodHandler";
 import { stableHandler } from '@lib/objectHandler/StableHandler';
-import { namedStable } from '@lib/namedObjects/Stable.js';
+import { namedStable } from '@lib/namedObjects/Stable';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
