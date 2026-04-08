@@ -1,4 +1,4 @@
-### GET alle Staples
+### GET index
 GET https://learnink-api.vercel.app/api/
 
 ### GET alle Staples

@@ -1,4 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "tsc"
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "nodejs20.x",
+      "includeFiles": "lib/**/*"
+    }
+  }
 }
