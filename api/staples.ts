@@ -1,5 +1,5 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import { test } from '@lib/test';
+import { test } from '../lib/test';
 
 import { methodHandler } from "../lib/MethodHandler";
 import { stableHandler } from '@lib/objectHandler/StableHandler';
