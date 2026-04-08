@@ -1,4 +1,4 @@
-import clientPromise from "../db.js"
+import clientPromise from "@lib/db"
 import { namedStable } from "../namedObjects/Stable"
 import { ObjectHandler } from "../types/ObjectHandler"
 import { NamedStable } from "../types/Stable"
