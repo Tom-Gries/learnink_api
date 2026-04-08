@@ -1,5 +1,5 @@
-import { NamedStable, Stable } from "../types/Stable";
-import { namedQuestion } from "../namedObjects/Questions"
+import { NamedStable, Stable } from "../types/Stable.js";
+import { namedQuestion } from "../namedObjects/Questions.js"
 
 const defaultValue: Stable = {
   name: "",

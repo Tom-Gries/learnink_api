@@ -1,4 +1,4 @@
-import { MethodHandler, MethodHandlerfunctions } from "./types/MethodHandler"
+import { MethodHandler, MethodHandlerfunctions } from "./types/MethodHandler.js"
 import { VercelRequest, VercelResponse } from '@vercel/node';
 
 export const methodHandler: MethodHandler = {

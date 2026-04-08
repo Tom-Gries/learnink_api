@@ -1,5 +1,5 @@
 import { Collection } from "mongodb"
-import { NamedObject } from "./NamedObject"
+import { NamedObject } from "./NamedObject.js"
 
 
 export interface ObjectHandler<T = NamedObject> {

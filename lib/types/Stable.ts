@@ -1,5 +1,5 @@
-import { NamedObject } from "./NamedObject"
-import { NamedQuestion } from "./Question";
+import { NamedObject } from "./NamedObject.js"
+import { NamedQuestion } from "./Question.js";
 
 export interface Stable {
   _id?: string

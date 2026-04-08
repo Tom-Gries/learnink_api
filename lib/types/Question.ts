@@ -1,4 +1,4 @@
-import { NamedObject } from "./NamedObject";
+import { NamedObject } from "./NamedObject.js";
 
 export type Answer = {
   id?: string;
