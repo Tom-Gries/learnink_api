@@ -1,5 +1,5 @@
-import { NamedObject } from "@lib/types/NamedObject"
-import { NamedQuestion } from "@lib/types/Question";
+import { NamedObject } from "./NamedObject"
+import { NamedQuestion } from "./Question";
 
 export interface Stable {
   _id?: string
