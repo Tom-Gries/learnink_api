@@ -1,5 +1,8 @@
 ### GET alle Staples
-GET https://learnink-api.vercel.app/api/staple
+GET https://learnink-api.vercel.app/api/
+
+### GET alle Staples
+GET https://learnink-api.vercel.app/api/staples
 
 ### POST neuen Staple
 POST https://learnink-api.vercel.app/api/staples

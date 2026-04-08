@@ -1,10 +1,10 @@
 import { NamedObject } from "./NamedObject"
-import { Question } from "./Question"
+import { NamedQuestion } from "./Question";
 
 export interface Stable {
   _id?: string
   name: string
-  questions: Question[]
+  questions: NamedQuestion | null
 }
 
 export interface NamedStable extends NamedObject<Stable> { }
