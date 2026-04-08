@@ -1,9 +1,14 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
+import { test } from '@lib/test';
+
 import { methodHandler } from "@lib/MethodHandler";
 import { stableHandler } from '@lib/objectHandler/StableHandler';
 import { namedStable } from '@lib/namedObjects/Stable';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+
+  test()
+
   try {
     const stables = await stableHandler.init()
     const handler = methodHandler.init({
