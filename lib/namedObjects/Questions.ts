@@ -1,4 +1,4 @@
-import { NamedQuestion, Question } from "../types/Question";
+import { NamedQuestion, Question } from "@lib/types/Question";
 
 const defaultQuestion: Question = {
   text: "",

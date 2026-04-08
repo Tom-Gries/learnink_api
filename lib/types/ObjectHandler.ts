@@ -1,5 +1,6 @@
 import { Collection } from "mongodb"
-import { NamedObject } from "./NamedObject"
+import { NamedObject } from "@lib/types/NamedObject"
+
 
 export interface ObjectHandler<T = NamedObject> {
   dbConnection: Collection<Document> | null

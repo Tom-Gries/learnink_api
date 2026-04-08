@@ -1,4 +1,4 @@
-import { NamedObject } from "./NamedObject";
+import { NamedObject } from "@lib/types/NamedObject";
 
 export type Answer = {
   id?: string;
