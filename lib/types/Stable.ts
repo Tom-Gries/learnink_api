@@ -1,7 +1,7 @@
 import { NamedObject } from "./NamedObject.js"
 import { NamedQuestion } from "./Question.js";
 
-export interface Stable {
+export interface Stable extends Document {
   _id?: string
   name: string
   questions: NamedQuestion | null

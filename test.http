@@ -17,7 +17,6 @@ POST https://learnink-api.vercel.app/api/staples/questions
 Content-Type: application/json
 
 {
-  "stapleId": "69b1d17ef67d04efe3462e6a",
   "text": "a",
   "answers": [
     {
