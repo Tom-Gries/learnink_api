@@ -10,7 +10,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const handler = methodHandler.init({
       "GET": async (req: VercelRequest, res: VercelResponse) => {
         const allStaples = await stables.getAll()
-        return res.json(allStaples.getValue())
+        return res.json(allStaples.map((s) => s.getValue()))
       },
       "POST": async (req: VercelRequest, res: VercelResponse) => {
         const stable = namedStable.setValue(req.body)

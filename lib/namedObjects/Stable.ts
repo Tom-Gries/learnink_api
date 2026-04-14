@@ -1,9 +1,10 @@
-import { NamedStable, Stable } from "../types/Stable.js";
+import { DBStable, NamedStable, Stable } from "../types/Stable.js";
 import { namedQuestion } from "../namedObjects/Questions.js"
 
 const defaultValue: Stable = {
   name: "",
-  questions: null
+  questions: null,
+  _id: undefined
 }
 
 export const namedStable: NamedStable = {
@@ -11,28 +12,13 @@ export const namedStable: NamedStable = {
   getValue() {
     return this.value;
   },
-  handleValue(value: any) {
-    if (Array.isArray(value)) {
-      this.value = this.createByArray(value)
-    } else {
-      this.value = this.createValue(value)
-    }
-  },
-  createValue(value: any): Stable {
+  setValue(value: any): NamedStable {
     if (value.name === undefined) throw new Error(value)
     if (value.questions === undefined) throw new Error("Questions fehlen")
-    return {
+    this.value = {
       name: value.name,
-      questions: namedQuestion.setValue(value.questions)
+      questions: value.questions.map((q: any) => namedQuestion.setValue(q)),
     }
-  },
-  createByArray(arr: any[]) {
-    return arr.map(item => {
-      return this.createValue(item)
-    })
-  },
-  setValue(value: any) {
-    this.handleValue(value)
     return this
-  }
+  },
 }

@@ -1,8 +1,6 @@
-export interface NamedObject<T = string> {
-  value: T | T[]
-  getValue: () => T | T[]
+
+export interface NamedObject<T = string,> {
+  value: T
+  getValue: () => T
   setValue: (value: any) => NamedObject<T>
-  handleValue: (value: any) => void
-  createByArray: (arr: any[]) => T[]
-  createValue: (value: any) => T
 }
