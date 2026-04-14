@@ -1,5 +1,5 @@
 import clientPromise from "../db.js"
-import { namedStable } from "../namedObjects/Stable.js"
+import { createNamedStable } from "../namedObjects/Stable.js"
 import { ObjectHandler } from "../types/ObjectHandler.js"
 import { NamedStable } from "../types/Stable.js"
 
@@ -17,7 +17,7 @@ export const stableHandler: ObjectHandler<NamedStable> = {
   getAll: async function (): Promise<NamedStable[]> {
     if (!this.dbConnection) throw new Error("DB-Verbindung nicht initialisiert")
     const data = await this.dbConnection.find().toArray()
-    const value = data.map((item) => namedStable.setValue(item))
+    const value = data.map((item) => createNamedStable(item))
     return value
   },
   add: function (value: NamedStable): void {
@@ -41,7 +41,7 @@ export const stableHandler: ObjectHandler<NamedStable> = {
       questions: plain.questions ? plain.questions.map((q) => q.getValue()) : null,
     })
 
-    return namedStable.setValue({
+    return createNamedStable({
       ...plain,
       _id: result.insertedId
     })
