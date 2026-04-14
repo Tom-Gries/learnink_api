@@ -17,12 +17,14 @@ export const namedStable: NamedStable = {
     if (value.questions === undefined) throw new Error("Questions fehlen")
 
 
-    throw new Error(value.questions)
+
     this.value = {
       _id: value._id,
       name: value.name,
       questions: value.questions.map((q: any) => namedQuestion.setValue(q)),
     }
+
+    throw new Error(JSON.stringify(this.value))
     return this
   },
 }
