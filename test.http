@@ -9,7 +9,8 @@ POST https://learnink-api.vercel.app/api/staples
 Content-Type: application/json
 
 {
-  "name": "Test"
+  "name": "Test",
+  "questions": []
 }
 
 ### POST neue Frage

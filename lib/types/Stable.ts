@@ -1,17 +1,11 @@
 import { NamedObject } from "./NamedObject.js"
-import { DBQuestion, NamedQuestion } from "./Question.js";
-import { Document } from "mongodb"
+import { NamedQuestion } from "./Question.js";
 
 export interface Stable {
   _id?: string
   name: string
-  questions: NamedQuestion | null
+  questions: NamedQuestion[]
 }
 
-export interface DBStable extends Document {
-  _id?: string
-  name: string
-  questions: DBQuestion[] | null
-}
 
 export interface NamedStable extends NamedObject<Stable> { }

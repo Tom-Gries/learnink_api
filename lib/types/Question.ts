@@ -12,6 +12,4 @@ export type Question = {
   answers: Answer[];
 };
 
-export interface DBQuestion extends Question, Document { }
-
 export interface NamedQuestion extends NamedObject<Question> { }

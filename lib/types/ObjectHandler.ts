@@ -1,8 +1,8 @@
 import { Collection, Document } from "mongodb"
 
-export interface ObjectHandler<T, S extends Document> {
-  dbConnection: Collection<S> | null
-  init: () => Promise<ObjectHandler<T, S>>
+export interface ObjectHandler<T> {
+  dbConnection: Collection<Document> | null
+  init: () => Promise<ObjectHandler<T>>
   getbyIndex: (index: number) => T | null
   getAll: () => Promise<T[]>
   add: (value: T) => void

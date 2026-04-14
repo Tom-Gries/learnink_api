@@ -1,9 +1,9 @@
-import { DBStable, NamedStable, Stable } from "../types/Stable.js";
+import { NamedStable, Stable } from "../types/Stable.js";
 import { namedQuestion } from "../namedObjects/Questions.js"
 
 const defaultValue: Stable = {
   name: "",
-  questions: null,
+  questions: [],
   _id: undefined
 }
 

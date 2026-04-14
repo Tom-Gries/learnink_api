@@ -1,13 +1,13 @@
 import clientPromise from "../db.js"
 import { namedStable } from "../namedObjects/Stable.js"
 import { ObjectHandler } from "../types/ObjectHandler.js"
-import { NamedStable, DBStable } from "../types/Stable.js"
+import { NamedStable } from "../types/Stable.js"
 
-export const stableHandler: ObjectHandler<NamedStable, DBStable> = {
-  init: async function (): Promise<ObjectHandler<NamedStable, DBStable>> {
+export const stableHandler: ObjectHandler<NamedStable> = {
+  init: async function (): Promise<ObjectHandler<NamedStable>> {
     const client = await clientPromise
     const db = client.db("learnink")
-    this.dbConnection = db.collection<DBStable>("staples")
+    this.dbConnection = db.collection("staples")
     return this
   },
   dbConnection: null,
@@ -34,13 +34,12 @@ export const stableHandler: ObjectHandler<NamedStable, DBStable> = {
       throw new Error("DB-Verbindung nicht initialisiert")
     }
 
-    const plain = value.toDB()
+    const plain = value.getValue()
 
-    if (Array.isArray(plain)) {
-      throw new Error("create erwartet ein einzelnes Objekt")
-    }
-
-    const result = await this.dbConnection.insertOne(plain)
+    const result = await this.dbConnection.insertOne({
+      name: plain.name,
+      questions: plain.questions ? plain.questions.map((q) => q.getValue()) : null,
+    })
 
     return namedStable.setValue({
       ...plain,
