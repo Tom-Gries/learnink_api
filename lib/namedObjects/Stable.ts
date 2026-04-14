@@ -15,6 +15,7 @@ export const namedStable: NamedStable = {
   setValue(value: any): NamedStable {
     if (value.name === undefined) throw new Error(value)
     if (value.questions === undefined) throw new Error("Questions fehlen")
+    console.log(value.questions)
     this.value = {
       _id: value._id,
       name: value.name,
