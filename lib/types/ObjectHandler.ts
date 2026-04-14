@@ -9,5 +9,4 @@ export interface ObjectHandler<T> {
   removeByIndex: (index: number) => void
   changeByIndex: (index: number, value: T) => void
   create: (value: T) => Promise<T>
-
 }

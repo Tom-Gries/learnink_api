@@ -35,7 +35,6 @@ export const stableHandler: ObjectHandler<NamedStable> = {
     }
 
     const plain = value.getValue()
-
     const result = await this.dbConnection.insertOne({
       name: plain.name,
       questions: plain.questions ? plain.questions.map((q) => q.getValue()) : null,
