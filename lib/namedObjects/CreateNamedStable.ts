@@ -1,5 +1,5 @@
 import { NamedStable, Stable } from "../types/Stable.js";
-import { createNamedQuestion } from "../namedObjects/Questions.js";
+import { createNamedQuestion } from "./CreateNamedQuestion.js";
 
 export function createNamedStable(value: any): NamedStable {
   if (value.name === undefined) throw new Error("Name fehlt");

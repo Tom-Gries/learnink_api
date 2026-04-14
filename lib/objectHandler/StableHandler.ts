@@ -1,5 +1,5 @@
 import clientPromise from "../db.js"
-import { createNamedStable } from "../namedObjects/Stable.js"
+import { createNamedStable } from "../namedObjects/createNamedStable.js"
 import { ObjectHandler } from "../types/ObjectHandler.js"
 import { NamedStable } from "../types/Stable.js"
 
