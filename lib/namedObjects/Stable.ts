@@ -24,7 +24,7 @@ export const namedStable: NamedStable = {
       questions: value.questions.map((q: any) => namedQuestion.setValue(q)),
     }
 
-    throw new Error(JSON.stringify(this.value))
+    throw new Error(JSON.stringify(this.value.questions))
     return this
   },
 }
