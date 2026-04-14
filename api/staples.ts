@@ -13,9 +13,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         return res.json(allStaples.map((s) => s.getValue()))
       },
       "POST": async (req: VercelRequest, res: VercelResponse) => {
-        const stable = namedStable.setValue(req.body)
-        const result = await stables.create(stable)
-        return res.status(201).json(result)
+        try {
+          const stable = namedStable.setValue(req.body)
+          const result = await stables.create(stable)
+          return res.status(201).json(result)
+        } catch (err) {
+          return res.status(400).json({ error: (err as Error).message })
+        }
       }
     })
     return handler.handle(req, res)
