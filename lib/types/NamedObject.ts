@@ -1,6 +1,3 @@
-
-export interface NamedObject<T = string,> {
-  value: T
+export interface NamedObject<T> {
   getValue: () => T
-  setValue: (value: any) => NamedObject<T>
 }

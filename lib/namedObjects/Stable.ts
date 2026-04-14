@@ -1,25 +1,19 @@
 import { NamedStable, Stable } from "../types/Stable.js";
-import { namedQuestion } from "../namedObjects/Questions.js"
+import { createNamedQuestion } from "../namedObjects/Questions.js";
 
-const defaultValue: Stable = {
-  name: "",
-  questions: [],
-  _id: undefined
-}
+export function createNamedStable(value: any): NamedStable {
+  if (value.name === undefined) throw new Error("Name fehlt");
+  if (value.questions === undefined) throw new Error("Questions fehlen");
 
-export const namedStable: NamedStable = {
-  value: defaultValue,
-  getValue() {
-    return this.value;
-  },
-  setValue(value: any): NamedStable {
-    if (value.name === undefined) throw new Error(value)
-    if (value.questions === undefined) throw new Error("Questions fehlen")
-    this.value = {
-      _id: value._id,
-      name: value.name,
-      questions: value.questions.map((q: any) => namedQuestion.setValue(q)),
+  const internalValue: Stable = {
+    _id: value._id,
+    name: value.name,
+    questions: value.questions.map((q: any) => createNamedQuestion(q)),
+  };
+
+  return {
+    getValue() {
+      return internalValue;
     }
-    return this
-  },
+  };
 }
