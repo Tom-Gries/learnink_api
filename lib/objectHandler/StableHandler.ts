@@ -30,7 +30,6 @@ export const stableHandler: ObjectHandler<NamedStable> = {
     if (!this.dbConnection) {
       throw new Error("DB-Verbindung nicht initialisiert")
     }
-
   },
   create: async function (value: NamedStable): Promise<NamedStable> {
     if (!this.dbConnection) {
