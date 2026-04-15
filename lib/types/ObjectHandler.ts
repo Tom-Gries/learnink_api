@@ -7,6 +7,6 @@ export interface ObjectHandler<T> {
   getAll: () => Promise<T[]>
   add: (value: T) => void
   removeByIndex: (index: number) => void
-  changeByIndex: (index: number, value: T) => void
+  changeByIndex: (value: T) => Promise<T>
   create: (value: T) => Promise<T>
 }

@@ -30,6 +30,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         } catch (err) {
           return res.status(400).json({ error: (err as Error).message })
         }
+      },
+      "PUT": async (req: VercelRequest, res: VercelResponse) => {
+        try {
+          const stable = createNamedStable(req.body)
+          const result = await stables.changeByIndex(stable)
+          return res.status(201).json(perpearHandler(result))
+        } catch (err) {
+          return res.status(400).json({ error: (err as Error).message })
+        }
       }
     })
 

@@ -26,8 +26,11 @@ export const stableHandler: ObjectHandler<NamedStable> = {
   removeByIndex: function (index: number): void {
     throw new Error("Function not implemented.")
   },
-  changeByIndex: function (index: number, value: NamedStable): void {
-    throw new Error("Function not implemented.")
+  changeByIndex: function (value: NamedStable): Promise<NamedStable> {
+    if (!this.dbConnection) {
+      throw new Error("DB-Verbindung nicht initialisiert")
+    }
+
   },
   create: async function (value: NamedStable): Promise<NamedStable> {
     if (!this.dbConnection) {
