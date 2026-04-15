@@ -26,10 +26,26 @@ export const stableHandler: ObjectHandler<NamedStable> = {
   removeByIndex: function (index: number): void {
     throw new Error("Function not implemented.")
   },
-  changeByIndex: function (value: NamedStable): Promise<NamedStable> {
+  changeByIndex: async function (value: NamedStable): Promise<NamedStable> {
     if (!this.dbConnection) {
-      throw new Error("DB-Verbindung nicht initialisiert")
+      throw new Error("DB-Verbindung nicht initialisiert");
     }
+
+    if (!value.getValue()._id) {
+      throw new Error("Kein _id vorhanden");
+    }
+
+    const updated = await this.dbConnection.findOneAndUpdate(
+      { _id: value.getValue()._id },
+      { $set: value.getValue() },
+      { returnDocument: "after" }
+    );
+
+    if (!updated.value) {
+      throw new Error("Dokument nicht gefunden");
+    }
+
+    return createNamedStable(updated.value);
   },
   create: async function (value: NamedStable): Promise<NamedStable> {
     if (!this.dbConnection) {

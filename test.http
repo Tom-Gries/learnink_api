@@ -12,38 +12,3 @@ Content-Type: application/json
   "name": "Test",
   "questions": []
 }
-
-### POST neue Frage
-POST https://learnink-api.vercel.app/api/staples/questions
-Content-Type: application/json
-
-{
-  "text": "a",
-  "answers": [
-    {
-      "id": 1,
-      "text": "4",
-      "isCorrect": false
-    },
-    {
-      "id": 2,
-      "text": "3",
-      "isCorrect": false
-    },
-    {
-      "id": 3,
-      "text": "5",
-      "isCorrect": false
-    },
-    {
-      "id": 4,
-      "text": "5",
-      "isCorrect": false
-    },
-    {
-      "id": 5,
-      "text": "5",
-      "isCorrect": false
-    }
-  ]
-}
