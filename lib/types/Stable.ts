@@ -1,6 +1,17 @@
 import { ObjectId } from "mongodb";
 import { NamedObject } from "./NamedObject.js"
-import { Question } from "./Question.js";
+
+export type Answer = {
+  id?: string;
+  text: string;
+  isCorrect: boolean;
+}
+
+export type Question = {
+  id?: string;
+  text: string;
+  answers: Answer[];
+};
 
 export interface Stable {
   _id?: ObjectId

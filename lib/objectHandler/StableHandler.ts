@@ -40,7 +40,6 @@ export const stableHandler: ObjectHandler<NamedStable> = {
 
     const { _id, ...rest } = plain;
 
-    // Sicherstellen, dass _id korrekt ein ObjectId ist
     const id = typeof _id === "string" ? new ObjectId(_id) : _id;
 
     const updatedDocument = await this.dbConnection.findOneAndUpdate(
@@ -66,6 +65,7 @@ export const stableHandler: ObjectHandler<NamedStable> = {
       questions: plain.questions,
     })
 
+    throw new Error(result)
     return createNamedStable({
       ...plain,
       _id: result.insertedId
