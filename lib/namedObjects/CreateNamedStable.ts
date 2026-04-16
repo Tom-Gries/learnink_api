@@ -1,5 +1,4 @@
 import { NamedStable, Stable } from "../types/Stable.js";
-import { createNamedQuestion } from "./CreateNamedQuestion.js";
 
 export function createNamedStable(value: any): NamedStable {
   if (value.name === undefined) throw new Error("Name fehlt");
@@ -8,7 +7,7 @@ export function createNamedStable(value: any): NamedStable {
   const internalValue: Stable = {
     _id: value._id,
     name: value.name,
-    questions: value.questions.map((q: any) => createNamedQuestion(q)),
+    questions: value.questions,
   };
 
   return {

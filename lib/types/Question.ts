@@ -1,5 +1,3 @@
-import { NamedObject } from "./NamedObject.js";
-
 export type Answer = {
   id?: string;
   text: string;
@@ -11,5 +9,3 @@ export type Question = {
   text: string;
   answers: Answer[];
 };
-
-export interface NamedQuestion extends NamedObject<Question> { }
