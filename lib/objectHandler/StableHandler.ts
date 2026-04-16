@@ -52,6 +52,9 @@ export const stableHandler: ObjectHandler<NamedStable> = {
       throw new Error("Dokument nicht gefunden");
     }
 
+
+    throw new Error(updatedDocument)
+
     return createNamedStable(updatedDocument);
   },
   create: async function (value: NamedStable): Promise<NamedStable> {
@@ -65,7 +68,6 @@ export const stableHandler: ObjectHandler<NamedStable> = {
       questions: plain.questions,
     })
 
-    throw new Error(result)
     return createNamedStable({
       ...plain,
       _id: result.insertedId
