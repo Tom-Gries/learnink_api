@@ -52,10 +52,7 @@ export const stableHandler: ObjectHandler<NamedStable> = {
       throw new Error("Dokument nicht gefunden");
     }
 
-
-    throw new Error(updatedDocument)
-
-    return createNamedStable(updatedDocument);
+    return createNamedStable(updatedDocument.value);
   },
   create: async function (value: NamedStable): Promise<NamedStable> {
     if (!this.dbConnection) {
