@@ -9,6 +9,43 @@ POST https://learnink-api.vercel.app/api/staples
 Content-Type: application/json
 
 {
-  "name": "Test",
+  "name": "NOCH EINS???",
   "questions": []
+}
+
+
+### PUT Staple aktualisieren
+PUT https://learnink-api.vercel.app/api/staples
+Content-Type: application/json
+
+{
+    "name": "ES KLappt !",
+    "questions": [
+        {
+            "text": "FRAGE !!!",
+            "answers": [
+                {
+                    "text": "ANTWORT",
+                    "isCorrect": true
+                },
+                {
+                    "text": "ANTWORT",
+                    "isCorrect": false
+                },
+                {
+                    "text": "ANTWORT",
+                    "isCorrect": false
+                },
+                {
+                    "text": "ANTWORT",
+                    "isCorrect": false
+                },
+                {
+                    "text": "ANTWORT",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ],
+    "_id": "69df98a39d31f50f10d1d437"
 }

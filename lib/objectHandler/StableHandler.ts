@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb"
 import clientPromise from "../db.js"
 import { createNamedStable } from "../namedObjects/CreateNamedStable.js"
 import { ObjectHandler } from "../types/ObjectHandler.js"
@@ -31,21 +32,28 @@ export const stableHandler: ObjectHandler<NamedStable> = {
       throw new Error("DB-Verbindung nicht initialisiert");
     }
 
-    if (!value.getValue()._id) {
+    const plain = value.getValue();
+
+    if (!plain._id) {
       throw new Error("Kein _id vorhanden");
     }
 
-    const updated = await this.dbConnection.findOneAndUpdate(
-      { _id: value.getValue()._id },
-      { $set: value.getValue() },
+    const { _id, ...rest } = plain;
+
+    // Sicherstellen, dass _id korrekt ein ObjectId ist
+    const id = typeof _id === "string" ? new ObjectId(_id) : _id;
+
+    const updatedDocument = await this.dbConnection.findOneAndUpdate(
+      { _id: id },
+      { $set: rest },
       { returnDocument: "after" }
     );
 
-    if (!updated.value) {
+    if (!updatedDocument) {
       throw new Error("Dokument nicht gefunden");
     }
 
-    return createNamedStable(updated.value);
+    return createNamedStable(updatedDocument);
   },
   create: async function (value: NamedStable): Promise<NamedStable> {
     if (!this.dbConnection) {
